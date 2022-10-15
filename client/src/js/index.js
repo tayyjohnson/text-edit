@@ -1,8 +1,8 @@
 import { Workbox } from "workbox-window";
 import Editor from "./editor";
 import "./database";
-import "./css/style.css";
-import Logo from "./images/logo.png";
+import "../css/style.css";
+import Logo from "../images/logo.png";
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { initDb, getDb, postDb } from "./database";
@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
   document.getElementById("logo").src = Logo;
 });
 
-//Function for install button
+//Button Function
 const buttonInstall = document.getElementById("buttonInstall");
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
@@ -31,7 +31,7 @@ window.addEventListener("beforeinstallprompt", (event) => {
   });
 
   window.addEventListener("appinstalled", (event) => {
-    console.log("👍", "appinstalled", event);
+    console.log("thumbsup", "appinstalled", event);
   });
 });
 
