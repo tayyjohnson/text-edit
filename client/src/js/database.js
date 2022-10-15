@@ -1,15 +1,24 @@
 import { openDB } from 'idb';
 import 'regenerator-runtime/runtime';
 
+// Connects MongoDB
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/text-edit',
+  {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+  },
+);
+
 export const initDb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
-        console.log('jate database already exists');
+        console.log('JATE database already exists');
         return;
       }
       db.createObjectStore('jate', { keyPath: 'id', autoIncrement: true });
-      console.log('jate database created');
+      console.log('JATE database created');
     },
   });
 
