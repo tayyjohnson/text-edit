@@ -1,11 +1,11 @@
 import { Workbox } from "workbox-window";
 import Editor from "./editor";
 import "./database.js";
-import "./client/src/css/style.css";
+import "./css/style.css";
 import Logo from "./images/logo.png";
 import { Tooltip, Toast, Popover } from "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { initDb, getDb, postDb } from "./database";
+import { initDb, getDb, postDb } from "./database.js";
 
 window.addEventListener("load", function () {
   initDb();
